@@ -1,0 +1,4 @@
+kind: Namespace 
+apiGroup: v1
+metadata: 
+  name: blue-green-ns
