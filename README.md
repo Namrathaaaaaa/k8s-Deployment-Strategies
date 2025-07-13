@@ -17,6 +17,7 @@ Learn and practice different Kubernetes deployment strategies with hands-on exam
 ## 🚀 Setup
 
 ### Option 1: Kind Cluster (Local)
+
 ```bash
 # Install Kind
 curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64
@@ -27,6 +28,7 @@ cd kind-cluster && chmod +x install.sh && ./install.sh
 ```
 
 ### Option 2: EC2 Instance
+
 ```bash
 chmod 400 k8s-deployment-s.pem
 ssh -i k8s-deployment-s.pem ubuntu@your-ec2-ip
@@ -35,7 +37,9 @@ ssh -i k8s-deployment-s.pem ubuntu@your-ec2-ip
 ## 📦 Deployment Strategies
 
 ### 1. Recreate Strategy
+
 **Location**: `Deployment_Strategies/Recreate-deployment/`
+
 - **Use Case**: Development environments
 - **Pros**: Simple, resource efficient
 - **Cons**: Downtime during deployment
@@ -47,7 +51,9 @@ kubectl get pods -n recreate-ns
 ```
 
 ### 2. Rolling Update Strategy
+
 **Location**: `Deployment_Strategies/Rolling-Update-Deployment/`
+
 - **Use Case**: Production environments
 - **Pros**: Zero downtime, built-in rollback
 - **Cons**: Mixed versions during rollout
@@ -59,7 +65,9 @@ kubectl rollout status deployment/rolling-deployment -n rolling-ns
 ```
 
 ### 3. Blue-Green Deployment
+
 **Location**: `Deployment_Strategies/Blue-green-deployment/`
+
 - **Use Case**: Critical applications
 - **Pros**: Instant rollback, zero downtime
 - **Cons**: Requires double resources
@@ -76,7 +84,9 @@ kubectl patch service online-shop-service -n blue-green-ns \
 ```
 
 ### 4. Canary Deployment
+
 **Location**: `Deployment_Strategies/Canary-deployment/` & `Simple-Canary-Example/`
+
 - **Use Case**: Risk mitigation, gradual rollouts
 - **Pros**: Real user feedback, risk mitigation
 - **Cons**: Complex traffic management
@@ -139,15 +149,15 @@ kubectl delete namespace <namespace>
 
 ## 🏆 Strategy Selection Guide
 
-| Environment | Strategy | Reason |
-|-------------|----------|---------|
-| Development | Recreate | Simple, downtime OK |
-| Production | Rolling Update | Zero downtime |
-| Critical Systems | Blue-Green | Instant rollback |
-| New Features | Canary | Risk mitigation |
+| Environment      | Strategy       | Reason              |
+| ---------------- | -------------- | ------------------- |
+| Development      | Recreate       | Simple, downtime OK |
+| Production       | Rolling Update | Zero downtime       |
+| Critical Systems | Blue-Green     | Instant rollback    |
+| New Features     | Canary         | Risk mitigation     |
 
 ---
 
-**Happy Learning! 🚀** 
+**Happy Learning! 🚀**
 
 For issues or questions, open a GitHub issue.
