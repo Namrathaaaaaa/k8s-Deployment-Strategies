@@ -158,6 +158,6 @@ kubectl delete namespace <namespace>
 
 ---
 
-**Happy Learning! 🚀**
+**Happy Learning! 🌸 🚀**
 
 For issues or questions, open a GitHub issue.
